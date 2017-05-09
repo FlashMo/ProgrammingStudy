@@ -1,0 +1,6 @@
+git clone git@github.com:FlashMo/ProgrammingStudy.git #从 github 克隆仓库
+git add .				#记录所有新建和更改（不包括删除）
+git add -A				#记录所有新建更改和删除
+git commit -m 'msg'		#提交到本地仓库
+git push origin master	#同步到 github
+git pull origin master  #从 github 同步
