@@ -4,3 +4,8 @@ git add -A				#记录所有新建更改和删除
 git commit -m 'msg'		#提交到本地仓库
 git push origin master	#同步到 github
 git pull origin master  #从 github 同步
+
+忽略掉已经追踪的文件，并更新 .gitignore 使以后不再提交它
+git rm --cached logs/xx.log
+然后更新 .gitignore 忽略掉目标文件，
+最后 git commit -m "We really don't want Git to track this anymore!"
