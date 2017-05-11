@@ -6,15 +6,29 @@
     <script src="../lib/jquery-1.11.2/jquery.js"></script>
 </head>
 <body>
-    <div id="p1">123</div>
-    <p class="c1">123</p>
+    <div id="p1">127</div>
+    <p class="c1">1234</p>
     <p class="c1 c2">123</p>
+    <from id="form">
+	    <p class="tt">11<input style="color: #000000" type="input" name="v1" value="v1"></p>
+	    <p>22<input style="color: #000000" type="input" name="v2" value="v2"></p>
+	    <p class="tt">33<input style="color: #000000" type="input" name="v3" value="v3"></p>
+	    <p>44<input style="color: #000000" type="input" name="v4" value="v4"></p>
+	    <p>55<input style="color: #000000" type="input" name="v5" value="v5"></p>
+    </from>
     <script>
         $('#p1').html('345');
         $('p.c1.c2').hide();
-        $(function() {
-
+        $('#form [name]').each(function() {
+	        console.log($(this).attr('name'));
+	        console.log($(this).val());
         });
+        $('#form').children('*:eq(3)').css('color', '#ff0000');
+        //$('#form').find('*:eq(3)').css('color', '#ff0000');
+	    $('#form > *:eq(2)').nextAll().css('color', '#ff0000');
+        $('#form > *:eq(3)').prev(".tt").css('color', '#ff0000');
+	    $('#form > *:eq(0)').next().css('color', '#f00');
+        $('#form > *:eq(0)').parent().css('border', '1px solid #f00').css('display', 'block');
     </script>
 </body>
 </html>
