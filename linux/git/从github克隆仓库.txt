@@ -1,4 +1,4 @@
-git clone git@github.com:FlashMo/ProgrammingStudy.git #从 github 克隆仓库
+﻿git clone git@github.com:FlashMo/ProgrammingStudy.git #从 github 克隆仓库
 git add .				#记录所有新建和更改（不包括删除）
 git add -A				#记录所有新建更改和删除
 git commit -m 'msg'		#提交到本地仓库
@@ -9,3 +9,19 @@ git pull origin master  #从 github 同步
 git rm --cached logs/xx.log
 然后更新 .gitignore 忽略掉目标文件，
 最后 git commit -m "We really don't want Git to track this anymore!"
+
+设置Git的user name和email：
+$ git config --global user.name "xuhaiyan"
+$ git config --global user.email "haiyan.xu.vip@gmail.com"
+
+设置 github 的 SSH KEY
+1.查看是否已经有了ssh密钥：
+cd ~/.ssh
+如果没有密钥则不会有此文件夹，有则备份删除
+2.生存密钥：
+ssh-keygen -t rsa -C “haiyan.xu.vip@gmail.com”
+按3个回车，密码为空。
+3.添加密钥到ssh
+ssh-add 文件名
+需要输入密码。最后 在 ~/.ssh 下得到了两个文件：id_rsa和id_rsa.pub
+4.在github上添加ssh密钥(个人设置里面)，这要添加的是“id_rsa.pub”里面的公钥。
